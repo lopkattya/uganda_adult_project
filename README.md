@@ -4,4 +4,5 @@ Recent reserach has implicated microbiome as a factor that modulates protection 
 # Code files
 
 # Datasets
-  + RNA-seq count matrix: `rnaseq_counts.txt` _(uploaded 4/4/2023)_
+  + RNA-seq count matrix: `rnaseq_counts.txt` _(uploaded 4/5/2023)_
+  + Microbiome `.RDS` dataset for use in `animalcules`:   _(uploaded 4/5/2023)_
