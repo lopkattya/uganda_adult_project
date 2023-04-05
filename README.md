@@ -1,1 +1,1 @@
-# Ugandan Adult nasal RNA-seq and micorbiome project
+# Ugandan Adult nasal RNA-seq and microbiome project
