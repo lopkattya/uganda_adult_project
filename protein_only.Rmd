@@ -1,0 +1,36 @@
+---
+title: "Filter protein coding only"
+author: "W. Evan Johnson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## read in data
+```{r}
+dat <- read.table("~/github/uganda_adult_project/rnaseq_counts_new_new.txt",sep="\t", header=T, row.names=1)
+```
+
+## get gene type
+```{r}
+library("AnnotationDbi")
+library("org.Hs.eg.db")
+gene_type <- mapIds(org.Hs.eg.db,
+                  keys = rownames(dat),
+                  keytype = "SYMBOL", 
+                  column = "GENETYPE")
+
+keep <- !is.na(gene_type) & gene_type=="protein-coding"
+dat1 <- dat[keep,]
+
+dim(dat)
+dim(dat1)
+```
+
+## Write to file
+```{r}
+write.table(dat1,file="~/github/uganda_adult_project/rnaseq_counts_protein_coding_only.txt", sep="\t", quote=F)
+```
